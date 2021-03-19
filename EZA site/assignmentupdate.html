@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>EZ Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script src="js/CRUDList.js"></script>
+    
+</head>
+
+<body onload="loadUpdateDetail()">
+
+    <header>
+      <img src="images/logo.png">
+    </header>
+
+    <section class="form-wrap">
+        <h1>Assignment Update</h1>
+            <form id="updateForm">
+              <label>Assignment ID:</label>
+              <input type="text" id="edassignment_id" placeholder="Assignment ID">
+              <label>Name:</label>
+              <input type="text" id="edname" placeholder="Name">
+              <label>Description</label>
+              <input type="text" id="eddescription" placeholder="Description">
+              <label>Average Hours To Complete:</label>
+              <input type="text" id="edhours" placeholder="Average Hours to Complete" pattern=".*" required>
+              <label>Worksheet:</label>
+              <input type="text" id="edworksheet" placeholder="Worksheet" pattern=".*" required>
+              <label>Answersheet:</label>
+              <input type="text" id="edanswersheet" placeholder="Answer Sheet" pattern=".*" required>
+              <label>User ID:</label>
+              <input type="text" id="eduser_id" placeholder="User ID" pattern=".*" required>
+                
+              <input type="button" onclick="updateAssignment()" value="Update">
+              <input type="button" onclick="window.location.href='assignments.html';" value="Back to List" />
+            </form>
+            
+      <script>  
+          function loadUpdateDetail() {
+                var idUpdate = sessionStorage.getItem("id");
+                console.log(idUpdate);
+                getOneUpdate(idUpdate)
+            };
+      </script>
+            
+    </section>
+
+
+</body>
+
+</html>

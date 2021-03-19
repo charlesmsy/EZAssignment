@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+        
+        <script src="js/usersCRUDList.js"></script>
+
+    </head>
+    <body>
+
+        <header>
+          <img src="images/logo.png">
+        </header>
+
+        <section class="form-wrap">
+            <h1>Register</h1>
+            <form id="registrationForm">
+              <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required>
+              <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
+              <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+              <input type="text" id="firstNameRegister" placeholder="First Name" pattern=".*" required>
+              <input type="text" id="lastNameRegister" placeholder="Last Name" pattern=".*" required>
+              <input type="text" id="ageRegister" placeholder="Age" pattern=".*" required>
+              <input type="text" id="isTeacherRegister" placeholder="Are you a teacher?" pattern=".*" required>
+              <input type="text" id="specialtyRegister" placeholder="Your Teaching specialty" pattern=".*" required>
+              <input type="text" id="bioRegister" placeholder="Your bio" pattern=".*" required>
+              <input type="text" id="joinDateRegister" placeholder="Join Date yyyy-mm-dd" pattern=".*" required>
+              <input type="text" id="userIdRegister" placeholder="user id" pattern=".*" required>
+
+              <input type="button" onclick="addUser()" value="Register Me">
+              <input type="button" onclick="window.location.href='signin.html';" value="To Sign In" />
+            </form>
+            
+            <script>
+
+
+                 
+            </script>
+            
+        </section>
+
+    </body>
+</html>

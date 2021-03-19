@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>EZ Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script src="js/CRUDList.js"></script>
+    
+</head>
+
+<body onload="getAll()">
+
+    <header>
+      <img src="images/logo.png">
+    </header>
+
+    <section class="form-wrap">
+        <h1>Assignments</h1>
+        <list id="recyclerview">
+  
+     <div id="dataView"></div>
+            
+      <input type="button" onclick="getAll()" value="List" />
+
+      <input type="email" id="idToGet" placeholder="Which assignment to look at?" pattern=".*" required> 
+      <input type="button" onclick="test()" value="Details" />
+            
+            <input type="button"  onclick="window.location.href='signin.html';" value="To Sign In">
+            
+        </list>
+        
+        <script>
+            function test() {
+                getOne(document.getElementById("idToGet").value)
+            }
+        </script>
+    </section>
+
+
+</body>
+
+</html>

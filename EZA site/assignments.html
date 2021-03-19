@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>EZ Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script src="js/CRUDList.js"></script>
+    
+</head>
+
+<body onload="getAll()">
+
+    <header>
+      <img src="images/logo.png">
+    </header>
+
+    <section class="form-wrap">
+        <h1>Assignments</h1>
+        
+        <list id="recyclerview">
+  
+         <div id="dataView"></div>
+
+          <input type="button" onclick="getAll()" value="Refresh List" />
+          <input type="button" onclick="window.location.href='assignmentscreation.html';" value="Add" />
+          <input type="button" onclick="window.location.href='assignmentdeletion.html';" value="Delete" />
+          <input type="email" id="idToGet" placeholder="Which assignment to look at?" pattern=".*" required> 
+          <input type="button" onclick="toDetail()" value="Details" />
+          <input type="button" onclick="window.location.href='index.html';" value="Logout" />
+            
+        </list>
+        
+        <script>
+            function toDetail() {
+                var searchId = document.getElementById("idToGet").value;
+                sessionStorage.setItem("id", searchId);
+                window.location.href = "assignmentdetail.html";
+            }
+        </script>
+    </section>
+
+
+</body>
+
+</html>

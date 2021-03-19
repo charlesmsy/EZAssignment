@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>123</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="/css/message.css">
+
+    </head>
+    <body>
+
+        <header>
+          <img src="images/logo.png">
+        </header>
+
+
+        <section  class="form-wrap">
+            <h1>Sign In</h1>
+            <form id="signinForm">
+              <input type="email" id="inputUserId" placeholder="User ID" required>
+              <input type="password" id="inPutPassword" placeholder="Password" required>
+                
+
+              <input type="button" onclick="loginCheck()" value="Sign in">
+              <input type="button"  onclick="window.location.href='register.html';" value="To Register">
+            </form>
+            
+            <script>
+                
+            async function loginCheck() {
+                var userid = document.getElementById("inputUserId").value;
+                var userpassword = document.getElementById("inPutPassword").value;
+                await fetch('https://dmwxjh34he.execute-api.us-east-1.amazonaws.com/dev/EZAFunc/users/'+userid+'/', {
+                  headers : { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                   }
+
+                })
+                    .then(function (response) {
+                        console.log(response);
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                        if(userpassword == data.password) {
+                            console.log('SUCCESS');
+                            location.replace("assignments.html");
+                        }else {
+                            console.log('FAIL');
+                            alert('Login failed')
+                        }
+                        
+                    });
+
+
+                    }
+
+
+
+            </script>
+        </section>
+        
+        
+    </body>
+</html>

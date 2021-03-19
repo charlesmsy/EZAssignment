@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>EZ Assignment</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Serverless web application example">
+    <meta name="author" content="">
+
+    
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <script src="js/CRUDList.js"></script>
+    
+</head>
+
+<body onload="loadDetail()">
+
+    <header>
+      <img src="images/logo.png">
+    </header>
+
+    <section class="form-wrap">
+        <h1>Assignment detail</h1>
+            <form id="displayDatails">
+                <label type="text" id="dassignment_id" placeholder="Assignment ID"></label>
+              <label type="text" id="dname" placeholder="Name"></label>
+              <label type="text" id="ddescription" placeholder="Description"></label>
+              <label type="text" id="dhours" placeholder="Average Hours to Complete" pattern=".*" required></label>
+              <label type="text" id="dworksheet" placeholder="Worksheet" pattern=".*" required></label>
+              <label type="text" id="danswersheet" placeholder="Answer Sheet" pattern=".*" required></label>
+              <label type="text" id="duser_id" placeholder="User ID" pattern=".*" required></label>
+
+              <input type="button" onclick="window.location.href='assignmentUpdate.html'" value="Edit">
+              <input type="button" onclick="toDelete()" value="Delete">
+              <input type="button" onclick="window.location.href='assignments.html';" value="Back to List" />
+            </form>
+            
+      <script>  
+          function loadDetail() {
+                var idPassed = sessionStorage.getItem("id");
+                console.log(idPassed);
+                getOne(idPassed)
+            };
+        function toDelete() {
+                deleteOne(sessionStorage.getItem("id"));
+                alert("Job Complete!");
+            };
+      </script>
+            
+    </section>
+
+
+</body>
+
+</html>
